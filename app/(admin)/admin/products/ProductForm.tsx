@@ -328,7 +328,7 @@ export function ProductForm({ product, token, mode }: ProductFormProps) {
                 </SelectContent>
               </Select>
             </div>
-            <div className="flex items-center space-x-2 pt-8">
+            <div className="col-span-2 md:col-span-1 flex items-center space-x-2 h-10 md:mt-8">
               <Switch
                 id="ecc"
                 checked={formData.ecc}
@@ -445,29 +445,31 @@ export function ProductForm({ product, token, mode }: ProductFormProps) {
               追加のスペック情報がありません
             </p>
           ) : (
-            <div className="space-y-2">
+            <div className="space-y-3">
               {specs.map((spec, index) => (
-                <div key={index} className="flex items-center gap-2">
+                <div key={index} className="flex flex-col sm:flex-row gap-2">
                   <Input
                     placeholder="項目名"
                     value={spec.key}
                     onChange={(e) => updateSpec(index, "key", e.target.value)}
-                    className="w-1/3"
+                    className="sm:w-1/3"
                   />
-                  <Input
-                    placeholder="値"
-                    value={spec.value}
-                    onChange={(e) => updateSpec(index, "value", e.target.value)}
-                    className="flex-1"
-                  />
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => removeSpec(index)}
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
+                  <div className="flex gap-2 flex-1">
+                    <Input
+                      placeholder="値"
+                      value={spec.value}
+                      onChange={(e) => updateSpec(index, "value", e.target.value)}
+                      className="flex-1"
+                    />
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => removeSpec(index)}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -476,15 +478,16 @@ export function ProductForm({ product, token, mode }: ProductFormProps) {
       </Card>
 
       {/* 送信ボタン */}
-      <div className="flex justify-end gap-4">
+      <div className="flex flex-col-reverse sm:flex-row justify-end gap-3 sm:gap-4">
         <Button
           type="button"
           variant="outline"
+          className="w-full sm:w-auto"
           onClick={() => router.push(`/admin/products?token=${token}`)}
         >
           キャンセル
         </Button>
-        <Button type="submit" disabled={isSubmitting}>
+        <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto">
           {isSubmitting && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
           {mode === "create" ? "商品を作成" : "変更を保存"}
         </Button>
