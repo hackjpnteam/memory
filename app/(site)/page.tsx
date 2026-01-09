@@ -16,13 +16,13 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary/10 to-background py-20">
+      <section className="bg-gradient-to-b from-[#93307C]/10 to-background py-20">
         <div className="container mx-auto px-4 text-center">
           <Badge variant="secondary" className="mb-4">
-            産業用・組込み用メモリ専門
+            産業用・組込み用メモリ専門メーカー
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            高品質メモリモジュールを
+            <span className="text-[#93307C]">高品質</span>メモリモジュールを
             <br />
             あなたのプロジェクトに
           </h1>
@@ -51,12 +51,12 @@ export default function HomePage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
-            MemoryProが選ばれる理由
+            <span className="text-[#93307C]">CENTURY MICRO</span>が選ばれる理由
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card>
               <CardHeader>
-                <Cpu className="h-10 w-10 text-primary mb-2" />
+                <Cpu className="h-10 w-10 text-[#93307C] mb-2" />
                 <CardTitle>豊富なラインナップ</CardTitle>
               </CardHeader>
               <CardContent>
@@ -68,7 +68,7 @@ export default function HomePage() {
 
             <Card>
               <CardHeader>
-                <Search className="h-10 w-10 text-primary mb-2" />
+                <Search className="h-10 w-10 text-[#93307C] mb-2" />
                 <CardTitle>高度なスペック検索</CardTitle>
               </CardHeader>
               <CardContent>
@@ -80,20 +80,19 @@ export default function HomePage() {
 
             <Card>
               <CardHeader>
-                <Shield className="h-10 w-10 text-primary mb-2" />
+                <Shield className="h-10 w-10 text-[#93307C] mb-2" />
                 <CardTitle>高い信頼性</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Century Micro、Micron、Samsung、SK
-                  hynixなど信頼のメーカー製品を厳選。
+                  Samsung、SK hynix、Micronなど信頼の半導体を採用した高品質モジュール。
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <Zap className="h-10 w-10 text-primary mb-2" />
+                <Zap className="h-10 w-10 text-[#93307C] mb-2" />
                 <CardTitle>迅速な対応</CardTitle>
               </CardHeader>
               <CardContent>
@@ -107,7 +106,7 @@ export default function HomePage() {
       </section>
 
       {/* Memory Types Section */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-[#93307C]/5">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
             取り扱いメモリタイプ
@@ -119,7 +118,7 @@ export default function HomePage() {
                   key={type}
                   href={`/products?type=${encodeURIComponent(type)}`}
                 >
-                  <Card className="hover:border-primary transition-colors cursor-pointer">
+                  <Card className="hover:border-[#93307C] transition-colors cursor-pointer">
                     <CardContent className="p-4 text-center">
                       <p className="font-semibold">{type}</p>
                     </CardContent>
@@ -134,7 +133,7 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-12 text-center">
+          <div className="bg-[#93307C] text-white rounded-2xl p-8 md:p-12 text-center">
             <Package className="h-16 w-16 mx-auto mb-6 opacity-90" />
             <h2 className="text-3xl font-bold mb-4">
               お探しの製品が見つからない場合は
@@ -144,7 +143,7 @@ export default function HomePage() {
               お気軽にご相談ください。
             </p>
             <Link href="/contact">
-              <Button size="lg" variant="secondary">
+              <Button size="lg" variant="secondary" className="bg-white text-[#93307C] hover:bg-white/90">
                 <MessageSquare className="h-5 w-5 mr-2" />
                 お問い合わせ
               </Button>
